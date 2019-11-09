@@ -1,4 +1,5 @@
 local enemies = require("enemies")
+local level_data = require("level_data")
 
 function deepcopy(orig)
     local orig_type = type(orig)
@@ -26,7 +27,7 @@ game_state.create = function()
   }
 end
 
-game_state.set_level = function(state, level_data, level_number)
+game_state.set_level = function(state, level_number)
   state.level_number = level_number
   state.enemies = deepcopy(level_data.levels[level_number].enemies)
 end
