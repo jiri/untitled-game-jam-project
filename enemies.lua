@@ -1,10 +1,13 @@
 local items = require("items")
 
+love.graphics.setDefaultFilter("nearest", "nearest", 1)
+
 local enemies =
 {
   fire_boss = {
     id = "fire_boss",
     name = "Fire Boss",
+    sprite = love.graphics.newImage("gfx/fire_boss.png"),
     drops = {
       default = nil,
     }
@@ -12,6 +15,7 @@ local enemies =
   fire_boss_weak = {
     id = "fire_boss_weak",
     name = "Fire Boss (Weak)",
+    sprite = love.graphics.newImage("gfx/fire_boss_weak.png"),
     drops = {
       laser_sword = items.magic_key,
       default = nil,
@@ -52,6 +56,7 @@ local enemies =
   security_guard = {
     id = "security_guard",
     name = "Security Guard",
+    sprite = love.graphics.newImage("gfx/guard.png"),
     drops = {
       spanner = items.tazer,
       default = nil,
