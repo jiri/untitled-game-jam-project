@@ -25,23 +25,37 @@ local enemies =
       default = items.carrot,
     }
   },
-
-  -- TODO: this
   shield_sword_guy = {
     id = "shield_sword_guy",
     name = "Shield + Sword Guy",
+    drops = {
+      rocket_launcher = items.laser_sword,
+      default = nil
+    }
   },
   metal_android = {
     id = "metal_android",
     name = "Metal Android",
+    drops = {
+      tazer = items.fire_bomb,
+      default = nil,
+    }
   },
   rocket_guy = {
     id = "rocket_guy",
     name = "Rocket Guy",
+    drops = {
+      gun = items.rocket_launcher,
+      default = nil,
+    }
   },
   security_guard = {
     id = "security_guard",
     name = "Security Guard",
+    drops = {
+      spanner = items.tazer,
+      default = nil,
+    }
   },
 }
 
