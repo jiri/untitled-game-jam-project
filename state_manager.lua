@@ -39,7 +39,7 @@ game_state.create = function()
   {
     level_number = 1,
     enemies = {},
-    items = {[items.water] = 1, [items.laser_sword] = 1, [items.rock] = 1}
+    items = {[items.spanner.id] = 1, [items.gun.id] = 1, [items.rock.id] = 1}
   }
 end
 
@@ -49,16 +49,21 @@ game_state.set_level = function(state, level_number)
 end
 
 game_state.use_item = function(state, item, enemy)
-  assert(state.items[item] and state.items[item] > 0)
+  assert(state.items[item.id] and state.items[item.id] > 0)
 
-  state.items[item] = state.items[item] - 1
-  if state.items[item] == 0  then
-    state.items[item] = nil
-  end
-  drop = enemy.drops[item]
-  if drop then
+  state.items[item.id] = state.items[item.id] - 1
+  local drop = enemy.drops[item.id]
+  if drop == nil then drop = enemy.drops['default'] end
+  --print(drop.id)
+  if drop and state.items[drop.id] then
     state.items[drop.id] = state.items[drop.id] + 1
+  elseif drop then
+    state.items[drop.id] = 1
   end
+  if state.items[item.id] == 0  then
+    state.items[item.id] = nil
+  end
+
 
   local killed = true
   if enemy.immune_to then

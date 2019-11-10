@@ -25,7 +25,6 @@ cursor.mousepressed = function(state,x,y,button)
     local items = renderer.get_item_bounding_boxes(state)
     local colliding_box = find_colliding_from_boxes(x,y,items)
     is_mouse_down = true
-    print("mouse pressed")
     if mouse_contents == nil and colliding_box then
       mouse_contents = colliding_box
     end
@@ -37,7 +36,6 @@ cursor.mousereleased = function(state,x,y,button)
     local enemies = renderer.get_enemy_bounding_boxes(state)
     local colliding_box = find_colliding_from_boxes(x,y,enemies)
     is_mouse_down = false
-    print("mouse released")
     if mouse_contents and colliding_box then
       print("used "..mouse_contents.item.name.." on "..colliding_box.enemy.name)
       state_manager.use_item(state,mouse_contents.item,colliding_box.enemy)

@@ -6,7 +6,7 @@ local state
 
 function love.load()
   state = state_manager.create()
-  state_manager.set_level(state, 6)
+  state_manager.set_level(state, 1)
 end
 
 function love.draw()

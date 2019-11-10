@@ -1,4 +1,6 @@
 local level_data = require("level_data")
+local enemies = require("enemies")
+local items = require("items")
 
 local renderer = {}
 
@@ -48,11 +50,11 @@ renderer.get_item_bounding_boxes = function(state)
   local x = 100
   local y = love.graphics.getHeight() - height - 100
 
-  for item, quantity in pairs(state.items) do
+  for item_id, quantity in pairs(state.items) do
     table.insert(bounding_boxes,
       {
         box = {x, y, width, height},
-        item = item,
+        item = items[item_id],
         quantity = quantity
       })
     x = x + 50 + width
