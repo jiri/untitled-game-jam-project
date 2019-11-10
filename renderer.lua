@@ -1,6 +1,9 @@
+local level_data = require("level_data")
+
 local renderer = {}
 
 local sprite_scale = 8
+local background_scale = 2
 
 
 renderer.get_enemy_bounding_boxes = function(state)
@@ -49,9 +52,12 @@ end
 
 
 renderer.render_state = function(state)
+  love.graphics.setColor(1,1,1,1)
+  love.graphics.draw(level_data.levels[state.level_number].sprite, 0, 0, 0, background_scale, background_scale)
+
   for _, enemy_data in pairs(renderer.get_enemy_bounding_boxes(state)) do
     love.graphics.setColor(1,1,1,1)
-    love.graphics.rectangle("fill", enemy_data.box[1], enemy_data.box[2], enemy_data.box[3], enemy_data.box[4])
+    --love.graphics.rectangle("fill", enemy_data.box[1], enemy_data.box[2], enemy_data.box[3], enemy_data.box[4])
     love.graphics.draw(enemy_data.enemy.sprite, enemy_data.box[1], enemy_data.box[2], 0, sprite_scale, sprite_scale)
 
     love.graphics.setColor(0,1,0,1)
@@ -60,7 +66,7 @@ renderer.render_state = function(state)
 
   for _, item_data in pairs(renderer.get_item_bounding_boxes(state)) do
     love.graphics.setColor(1,1,1,1)
-    love.graphics.rectangle("fill", item_data.box[1], item_data.box[2], item_data.box[3], item_data.box[4])
+    --love.graphics.rectangle("fill", item_data.box[1], item_data.box[2], item_data.box[3], item_data.box[4])
     love.graphics.draw(item_data.item.sprite, item_data.box[1], item_data.box[2], 0, sprite_scale, sprite_scale)
     love.graphics.print(item_data.item.name .. "  " .. item_data.quantity, item_data.box[1], item_data.box[2] + item_data.box[4])
   end

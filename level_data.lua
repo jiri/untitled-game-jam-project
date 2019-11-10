@@ -2,6 +2,8 @@ local enemies = require("enemies")
 
 local level_data = {}
 
+love.graphics.setDefaultFilter("nearest", "nearest", 1)
+
 level_data.levels =
 {
   {
@@ -21,6 +23,7 @@ level_data.levels =
   },
   {
     enemies = {enemies.fire_boss},
+    sprite = love.graphics.newImage("gfx/levels/fire_boss_room.png"),
   },
 }
 
