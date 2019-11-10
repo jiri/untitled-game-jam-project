@@ -86,13 +86,15 @@ renderer.render_state = function(state)
     render_text(item_data.item.name .. "  " .. item_data.quantity, item_data.box[1], item_data.box[2] + item_data.box[4])
   end
 
-  local text_box_y = 250
-  love.graphics.setColor(0,0,0)
-  love.graphics.rectangle("fill", 0, text_box_y, 300, 100)
-  for _, line in pairs(state.messages) do
-    love.graphics.setColor(0,1,0)
-    love.graphics.print(line, 0, text_box_y)
-    text_box_y = text_box_y + 20
+  if state.level_number <=6 then
+    local text_box_y = 250
+    love.graphics.setColor(0,0,0)
+    love.graphics.rectangle("fill", 0, text_box_y, 300, 100)
+    for _, line in pairs(state.messages) do
+      love.graphics.setColor(0,1,0)
+      love.graphics.print(line, 0, text_box_y)
+      text_box_y = text_box_y + 20
+    end
   end
 end
 
