@@ -22,7 +22,7 @@ end
 renderer.get_enemy_bounding_boxes = function(state)
   local bounding_boxes = {}
 
-  local x = 100
+  local x = 50
   local y = 100 - 48
 
   local width = 16 * sprite_scale
@@ -50,7 +50,7 @@ renderer.get_item_bounding_boxes = function(state)
   local width = 16 * sprite_scale
   local height = 16 * sprite_scale
 
-  local x = 100
+  local x = 50
   local y = love.graphics.getHeight() - height - 100
 
   for item_id, quantity in pairs(state.items) do
