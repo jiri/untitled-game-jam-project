@@ -1,13 +1,13 @@
 local renderer = {}
 
-local sprite_scale = 10
+local sprite_scale = 8
 
 
 renderer.get_enemy_bounding_boxes = function(state)
   local bounding_boxes = {}
 
   local x = 100
-  local y = 300 - 48
+  local y = 100 - 48
 
   local width = 16 * sprite_scale
   local height = 24 * sprite_scale
