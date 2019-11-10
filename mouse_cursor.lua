@@ -40,7 +40,8 @@ cursor.mousereleased = function(state,x,y,button)
     local colliding_box = find_colliding_from_boxes(x,y,enemies)
     is_mouse_down = false
     if mouse_contents and colliding_box then
-      print("used "..mouse_contents.item.name.." on "..colliding_box.enemy.name)
+
+      state_manager.add_message(state, "Used "..mouse_contents.item.name.." on "..colliding_box.enemy.name)
       state_manager.use_item(state,mouse_contents.item,colliding_box.enemy)
       mouse_contents = nil
     elseif mouse_contents then

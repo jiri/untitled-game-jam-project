@@ -34,12 +34,20 @@ end
 
 local game_state = {}
 
+game_state.add_message = function(state, message)
+  table.insert(state.messages, message)
+  if #state.messages > 5 then
+    table.remove(state.messages, 1)
+  end
+end
+
 game_state.create = function()
   return
   {
     level_number = 1,
     enemies = {},
-    items = {}
+    items = {},
+    messages = {},
   }
 end
 
@@ -61,10 +69,10 @@ game_state.use_item = function(state, item, enemy)
   --print(drop.id)
   if drop and state.items[drop.id] then
     state.items[drop.id] = state.items[drop.id] + 1
-    print("got dropped item "..drop.id)
+    game_state.add_message(state,"Got dropped item "..drop.id)
   elseif drop then
     state.items[drop.id] = 1
-    print("got dropped item "..drop.id)
+    game_state.add_message(state,"Got dropped item "..drop.id)
   end
   if state.items[item.id] == 0  then
     state.items[item.id] = nil
@@ -83,14 +91,14 @@ game_state.use_item = function(state, item, enemy)
   if killed then
     if enemy.id == "fire_boss" and item.id == "water_bucket" then
       table.insert(state.enemies, enemies.fire_boss_weak)
-      print("boss extinguished")
+      game_state.add_message(state,"boss extinguished")
     else
-      print("killed target")
+      --game_state.add_message(state,"killed target")
     end
     remove_str_from_table(enemy, state.enemies)
 
     if #state.enemies == 0 and state.level_number + 1 < 8 then
-      print("Next Level")
+      game_state.add_message(state,"Next Level")
       game_state.set_level(state,state.level_number + 1)
     end
   end
