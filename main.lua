@@ -11,6 +11,7 @@ end
 
 function love.draw()
   renderer.render_state(state)
+  mouse_cursor.draw()
 end
 
 function love.mousepressed(x,y,button)
