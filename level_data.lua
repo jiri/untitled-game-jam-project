@@ -16,12 +16,15 @@ level_data.levels =
   },
   {
     enemies = {enemies.metal_android},
+    sprite = love.graphics.newImage("gfx/levels/third_room.png"),
   },
   {
     enemies = {enemies.shield_sword_guy},
+    sprite = love.graphics.newImage("gfx/levels/fourth_room.png"),
   },
   {
     enemies = {enemies.snowman},
+    sprite = love.graphics.newImage("gfx/levels/snow_room.png"),
   },
   {
     enemies = {enemies.fire_boss},
