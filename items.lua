@@ -1,3 +1,5 @@
+love.graphics.setDefaultFilter("nearest", "nearest", 1)
+
 local items =
 {
   magic_key = {
@@ -7,10 +9,12 @@ local items =
   laser_sword = {
     id = "laser_sword",
     name = "Laser Sword",
+    sprite = love.graphics.newImage("gfx/sword.png"),
   },
   water = {
     id = "Water",
     name = "water",
+    sprite = love.graphics.newImage("gfx/water.png"),
   },
   rocket_launcher = {
     id = "rocket_launcher",
@@ -38,7 +42,8 @@ local items =
   },
   rock = {
     id = "rock",
-    name = "Rock"
+    name = "Rock",
+    sprite = love.graphics.newImage("gfx/rock.png"),
   }
 }
 
