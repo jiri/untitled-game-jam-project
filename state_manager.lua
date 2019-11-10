@@ -52,6 +52,9 @@ game_state.use_item = function(state, item, enemy)
   assert(state.items[item] and state.items[item] > 0)
 
   state.items[item] = state.items[item] - 1
+  if state.items[item] == 0  then
+    state.items[item] = nil
+  end
   drop = enemy.drops[item]
   if drop then
     state.items[drop.id] = state.items[drop.id] + 1
