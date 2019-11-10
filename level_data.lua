@@ -34,7 +34,7 @@ level_data.levels =
   },
   {
     enemies = {},
-    items = {},
+    items = {[items.magic_key.id] = 1},
     sprite = love.graphics.newImage("gfx/you_win.png"),
   },
   {
