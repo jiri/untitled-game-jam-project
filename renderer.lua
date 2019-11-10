@@ -6,7 +6,7 @@ local renderer = {}
 
 local font = love.graphics.newFont("Vera.ttf")
 
-local sprite_scale = 8
+local sprite_scale = 6
 local background_scale = 2
 
 function render_text(text, x, y)

@@ -12,8 +12,8 @@ local items =
     name = "Laser Sword",
     sprite = love.graphics.newImage("gfx/sword.png"),
   },
-  water = {
-    id = "water",
+  water_bucket = {
+    id = "water_bucket",
     name = "Water",
     sprite = love.graphics.newImage("gfx/water.png"),
   },

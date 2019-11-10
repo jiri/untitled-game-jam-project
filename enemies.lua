@@ -70,6 +70,7 @@ local enemies =
     sprite = love.graphics.newImage("gfx/guard.png"),
     drops = {
       spanner = items.tazer,
+      rock = items.rock,
       default = nil,
     }
   },
