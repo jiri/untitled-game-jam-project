@@ -62,6 +62,15 @@ local enemies =
       default = nil,
     }
   },
+  minion = {
+    id = "minion",
+    name = "Minion",
+    sprite = love.graphics.newImage("gfx/minion.png"),
+    drops = {
+      rock = items.rock,
+      default = nil
+    }
+  }
 }
 
 return enemies
