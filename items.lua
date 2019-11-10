@@ -5,6 +5,7 @@ local items =
   magic_key = {
     id = "magic_key",
     name = "Magic Key",
+    sprite = love.graphics.newImage("gfx/magic_key.png"),
   },
   laser_sword = {
     id = "laser_sword",
@@ -44,6 +45,7 @@ local items =
   carrot = {
     id = "carrot",
     name = "Carrot",
+    sprite = love.graphics.newImage("gfx/carrot.png"),
   },
   rock = {
     id = "rock",

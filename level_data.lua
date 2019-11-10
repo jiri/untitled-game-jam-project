@@ -8,9 +8,11 @@ level_data.levels =
 {
   {
     enemies = {enemies.security_guard, enemies.security_guard, enemies.minion, enemies.minion, enemies.minion},
+    sprite = love.graphics.newImage("gfx/levels/first_room.png"),
   },
   {
     enemies = {enemies.rocket_guy, enemies.minion, enemies.minion, enemies.minion, enemies.minion},
+    sprite = love.graphics.newImage("gfx/levels/second_room.png"),
   },
   {
     enemies = {enemies.metal_android},
