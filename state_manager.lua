@@ -89,7 +89,7 @@ game_state.use_item = function(state, item, enemy)
     end
     remove_str_from_table(enemy, state.enemies)
 
-    if #state.enemies == 0 and state.level_number + 1 < 6 then
+    if #state.enemies == 0 and state.level_number + 1 < 8 then
       print("Next Level")
       game_state.set_level(state,state.level_number + 1)
     end
@@ -102,7 +102,7 @@ game_state.use_item = function(state, item, enemy)
 
   if item_count == 0 then
     print("Game Over")
-    game_state.set_level(state,1)
+    game_state.set_level(state,8)
   end
 
 end

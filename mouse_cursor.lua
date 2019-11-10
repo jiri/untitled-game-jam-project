@@ -29,6 +29,9 @@ cursor.mousepressed = function(state,x,y,button)
       mouse_contents = colliding_box
     end
   end
+  if (state.level_number == 7 or state.level_number == 8) then
+    state_manager.set_level(state,1)
+  end
 end
 
 cursor.mousereleased = function(state,x,y,button)

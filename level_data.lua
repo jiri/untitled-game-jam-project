@@ -35,7 +35,12 @@ level_data.levels =
   {
     enemies = {},
     items = {},
-    sprite = love.graphics.newImage("gfx/levels/fire_boss_room.png"),
+    sprite = love.graphics.newImage("gfx/you_win.png"),
+  },
+  {
+    enemies = {},
+    items = {},
+    sprite = love.graphics.newImage("gfx/you_lose.png"),
   }
 }
 
