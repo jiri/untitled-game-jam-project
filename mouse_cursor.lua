@@ -73,6 +73,7 @@ cursor.draw = function(state)
     end
 
     --draw contents of hand
+    renderer.draw_contents(mx,my,mouse_contents.item)
   end
 end
 

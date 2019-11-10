@@ -40,6 +40,9 @@ renderer.get_enemy_bounding_boxes = function(state)
   return bounding_boxes
 end
 
+renderer.draw_contents = function(x,y,item)
+  love.graphics.draw(item.sprite,x,y, 0, sprite_scale, sprite_scale)
+end
 
 renderer.get_item_bounding_boxes = function(state)
   local bounding_boxes = {}
