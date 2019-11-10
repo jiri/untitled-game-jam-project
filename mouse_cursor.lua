@@ -42,6 +42,8 @@ cursor.mousereleased = function(state,x,y,button)
       print("used "..mouse_contents.item.name.." on "..colliding_box.enemy.name)
       state_manager.use_item(state,mouse_contents.item,colliding_box.enemy)
       mouse_contents = nil
+    elseif mouse_contents then
+      mouse_contents = nil
     end
   end
 end

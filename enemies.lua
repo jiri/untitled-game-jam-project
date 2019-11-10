@@ -8,6 +8,10 @@ local enemies =
     id = "fire_boss",
     name = "Fire Boss",
     sprite = love.graphics.newImage("gfx/fire_boss.png"),
+    immune_to = {
+      'rock',
+      'laser_sword'
+    },
     drops = {
       default = nil,
     }
@@ -16,6 +20,9 @@ local enemies =
     id = "fire_boss_weak",
     name = "Fire Boss (Weak)",
     sprite = love.graphics.newImage("gfx/fire_boss_weak.png"),
+    immune_to = {
+      'rock'
+    },
     drops = {
       laser_sword = items.magic_key,
       default = nil,

@@ -60,11 +60,22 @@ game_state.use_item = function(state, item, enemy)
     state.items[drop.id] = state.items[drop.id] + 1
   end
 
-  remove_str_from_table(enemy, state.enemies)
-
-  if enemy.id == "fire_boss" and item.id == "water" then
-    table.insert(state, "fire_boss_weak")
+  local killed = true
+  if enemy.immune_to then
+    for _, immunity in ipairs(enemy.immune_to) do
+      if immunity == item.id then
+        killed = false
+      end
+    end
   end
+
+  if killed then
+    if enemy.id == "fire_boss" and item.id == "water" then
+      table.insert(state.enemies, enemies.fire_boss_weak)
+    end
+    remove_str_from_table(enemy, state.enemies)
+  end
+
 end
 
 return game_state

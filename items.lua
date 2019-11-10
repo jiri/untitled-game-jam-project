@@ -13,8 +13,8 @@ local items =
     sprite = love.graphics.newImage("gfx/sword.png"),
   },
   water = {
-    id = "Water",
-    name = "water",
+    id = "water",
+    name = "Water",
     sprite = love.graphics.newImage("gfx/water.png"),
   },
   rocket_launcher = {
