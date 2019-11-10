@@ -49,7 +49,7 @@ local items =
   },
   rock = {
     id = "rock",
-    name = "Rock",
+    name = "Fist",
     sprite = love.graphics.newImage("gfx/rock.png"),
   }
 }
