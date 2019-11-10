@@ -8,7 +8,7 @@ love.graphics.setDefaultFilter("nearest", "nearest", 1)
 level_data.levels =
 {
   {
-    enemies = {enemies.security_guard, enemies.security_guard, enemies.minion, enemies.minion, enemies.minion},
+    enemies = {enemies.security_guard, enemies.minion, enemies.minion, enemies.minion},
     sprite = love.graphics.newImage("gfx/levels/first_room.png"),
     items = {[items.spanner.id] = 1, [items.gun.id] = 1, [items.rock.id] = 1}
   },

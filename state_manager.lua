@@ -69,10 +69,15 @@ game_state.use_item = function(state, item, enemy)
   --print(drop.id)
   if drop and state.items[drop.id] then
     state.items[drop.id] = state.items[drop.id] + 1
-    game_state.add_message(state,"Got dropped item "..drop.id)
+
+    if drop.id ~= "rock" then
+      game_state.add_message(state,"Got dropped item "..drop.name)
+    end
   elseif drop then
     state.items[drop.id] = 1
-    game_state.add_message(state,"Got dropped item "..drop.id)
+    if drop.id ~= "rock" then
+      game_state.add_message(state,"Got dropped item "..drop.name)
+    end
   end
   if state.items[item.id] == 0  then
     state.items[item.id] = nil
@@ -101,6 +106,8 @@ game_state.use_item = function(state, item, enemy)
       game_state.add_message(state,"Next Level")
       game_state.set_level(state,state.level_number + 1)
     end
+  else
+    game_state.add_message(state, "Enemy is immune!")
   end
 
   local item_count = 0
@@ -113,6 +120,6 @@ game_state.use_item = function(state, item, enemy)
     game_state.set_level(state,8)
   end
 
-end
+  end
 
 return game_state

@@ -41,6 +41,11 @@ local enemies =
     id = "shield_sword_guy",
     name = "Shield + Sword Guy",
     sprite = love.graphics.newImage("gfx/sword_guy.png"),
+    immune_to = {
+      'fist',
+      'tazer',
+      'gun',
+    },
     drops = {
       rocket_launcher = items.laser_sword,
       default = nil
@@ -50,7 +55,12 @@ local enemies =
     id = "metal_android",
     name = "Metal Android",
     sprite = love.graphics.newImage("gfx/android.png"),
+    immune_to = {
+      'gun',
+      'spanner',
+    },
     drops = {
+      rocket_launcher = items.fire_bomb,
       tazer = items.fire_bomb,
       default = nil,
     }
@@ -58,6 +68,11 @@ local enemies =
   rocket_guy = {
     id = "rocket_guy",
     name = "Rocket Guy",
+    immune_to = {
+      'rock',
+      'spanner',
+      'tazer',
+    },
     sprite = love.graphics.newImage("gfx/rocket_guy.png"),
     drops = {
       gun = items.rocket_launcher,
@@ -67,9 +82,13 @@ local enemies =
   security_guard = {
     id = "security_guard",
     name = "Security Guard",
+    immune_to = {
+      'rock'
+    },
     sprite = love.graphics.newImage("gfx/guard.png"),
     drops = {
       spanner = items.tazer,
+      gun = items.tazer,
       rock = items.rock,
       default = nil,
     }
