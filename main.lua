@@ -11,13 +11,13 @@ end
 
 function love.draw()
   renderer.render_state(state)
-  mouse_cursor.draw()
+  mouse_cursor.draw(state)
 end
 
 function love.mousepressed(x,y,button)
-  mouse_cursor.mousepressed(x,y,button)
+  mouse_cursor.mousepressed(state,x,y,button)
 end
 
 function love.mousereleased(x,y,button)
-  mouse_cursor.mousereleased(x,y,button)
+  mouse_cursor.mousereleased(state,x,y,button)
 end
