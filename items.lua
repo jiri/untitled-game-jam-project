@@ -35,7 +35,11 @@ local items =
   carrot = {
     id = "carrot",
     name = "Carrot",
-  }
+  },
+  rock = {
+    id = "rock",
+    name = "Rock",
+  },
 }
 
 return items
