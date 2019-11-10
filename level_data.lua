@@ -17,10 +17,10 @@ level_data.levels =
     enemies = {enemies.metal_android},
   },
   {
-    enemies = {enemies.rocket_guy},
+    enemies = {enemies.rocket_guy, enemies.minion, enemies.minion, enemies.minion, enemies.minion},
   },
   {
-    enemies = {enemies.security_guard},
+    enemies = {enemies.security_guard, enemies.security_guard, enemies.minion, enemies.minion, enemies.minion},
   },
 }
 
