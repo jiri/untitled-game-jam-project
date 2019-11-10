@@ -1,5 +1,6 @@
 local enemies = require("enemies")
 local level_data = require("level_data")
+local items = require("items")
 
 local remove_str_from_table = function(str, t)
   local index_of_str
@@ -38,7 +39,7 @@ game_state.create = function()
   {
     level_number = 1,
     enemies = {},
-    items = {water = 1, sword = 1, rock = 1}
+    items = {[items.water] = 1, [items.laser_sword] = 1, [items.rock] = 1}
   }
 end
 

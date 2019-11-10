@@ -8,9 +8,9 @@ local items =
     id = "laser_sword",
     name = "Laser Sword",
   },
-  water_bucket = {
-    id = "water_bucket",
-    name = "Water Bucket",
+  water = {
+    id = "Water",
+    name = "water",
   },
   rocket_launcher = {
     id = "rocket_launcher",
@@ -38,8 +38,8 @@ local items =
   },
   rock = {
     id = "rock",
-    name = "Rock",
-  },
+    name = "Rock"
+  }
 }
 
 return items
