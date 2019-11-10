@@ -2,9 +2,20 @@ local level_data = require("level_data")
 
 local renderer = {}
 
+local font = love.graphics.newFont("Vera.ttf")
+
 local sprite_scale = 8
 local background_scale = 2
 
+function render_text(text, x, y)
+  local txt = love.graphics.newText(font, text)
+  local w, h = txt:getDimensions()
+
+  love.graphics.setColor(0,0,0,0.5)
+  love.graphics.rectangle("fill", x, y, w, h)
+  love.graphics.setColor(1,1,1,1)
+  love.graphics.draw(txt, x, y)
+end
 
 renderer.get_enemy_bounding_boxes = function(state)
   local bounding_boxes = {}
@@ -60,15 +71,14 @@ renderer.render_state = function(state)
     --love.graphics.rectangle("fill", enemy_data.box[1], enemy_data.box[2], enemy_data.box[3], enemy_data.box[4])
     love.graphics.draw(enemy_data.enemy.sprite, enemy_data.box[1], enemy_data.box[2], 0, sprite_scale, sprite_scale)
 
-    love.graphics.setColor(0,1,0,1)
-    love.graphics.print(enemy_data.enemy.name, enemy_data.box[1], enemy_data.box[2] + enemy_data.box[4])
+    render_text(enemy_data.enemy.name, enemy_data.box[1], enemy_data.box[2] + enemy_data.box[4])
   end
 
   for _, item_data in pairs(renderer.get_item_bounding_boxes(state)) do
     love.graphics.setColor(1,1,1,1)
     --love.graphics.rectangle("fill", item_data.box[1], item_data.box[2], item_data.box[3], item_data.box[4])
     love.graphics.draw(item_data.item.sprite, item_data.box[1], item_data.box[2], 0, sprite_scale, sprite_scale)
-    love.graphics.print(item_data.item.name .. "  " .. item_data.quantity, item_data.box[1], item_data.box[2] + item_data.box[4])
+    render_text(item_data.item.name .. "  " .. item_data.quantity, item_data.box[1], item_data.box[2] + item_data.box[4])
   end
 end
 
