@@ -10,7 +10,13 @@ local enemies =
     sprite = love.graphics.newImage("gfx/fire_boss.png"),
     immune_to = {
       'rock',
-      'laser_sword'
+      'laser_sword',
+	  'rocket_launcher',
+	  'fire_bomb',
+	  'tazer',
+	  'gun',
+	  'spanner',
+	  'carrot',
     },
     drops = {
       default = nil,
@@ -21,7 +27,13 @@ local enemies =
     name = "Fire Boss (Weak)",
     sprite = love.graphics.newImage("gfx/fire_boss_weak.png"),
     immune_to = {
-      'rock'
+      'rock',
+	  'rocket_launcher',
+	  'fire_bomb',
+	  'tazer',
+	  'gun',
+	  'spanner',
+	  'carrot',
     },
     drops = {
       laser_sword = items.magic_key,
@@ -42,9 +54,13 @@ local enemies =
     name = "Shield + Sword Guy",
     sprite = love.graphics.newImage("gfx/sword_guy.png"),
     immune_to = {
-      'fist',
-      'tazer',
-      'gun',
+      'rock',
+      'laser_sword',
+	  'fire_bomb',
+	  'tazer',
+	  'gun',
+	  'spanner',
+	  'carrot',
     },
     drops = {
       rocket_launcher = items.laser_sword,
@@ -56,8 +72,12 @@ local enemies =
     name = "Metal Android",
     sprite = love.graphics.newImage("gfx/android.png"),
     immune_to = {
-      'gun',
-      'spanner',
+      'rock',
+      'laser_sword',
+	  'fire_bomb',
+	  'gun',
+	  'spanner',
+	  'carrot',
     },
     drops = {
       rocket_launcher = items.fire_bomb,
@@ -89,7 +109,6 @@ local enemies =
     drops = {
       spanner = items.tazer,
       gun = items.tazer,
-      rock = items.rock,
       default = nil,
     }
   },
